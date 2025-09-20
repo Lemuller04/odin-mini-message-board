@@ -1,0 +1,15 @@
+<%- include("../partials/header.ejs") %>
+<h1>Mini-Message Board</h1>
+
+<main>
+<% for (const message of messages) { %>
+    <div>
+        <h3><%= message.user %></h3>
+        <p><%= message.text %></p>
+        <p class="date-p"><span><a href="<%= `/message/${message.id}` %>">Abrir</a></span><span><%= message.added %></span></p>
+    </div>
+<% } %>
+<a href="/new">New Message</a>
+</main>
+
+<%- include("../partials/footer.ejs") %>

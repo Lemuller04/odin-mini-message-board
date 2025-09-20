@@ -1,0 +1,17 @@
+<%- include("../partials/header.ejs") %>
+<h1>New message</h1>
+<main>
+    <form method="POST" action="/new">
+        <p>
+            <label for="author">Username: </label>
+            <input type="text" name="author" id="author" required>
+        </p>
+        <p>
+            <label for="message">Message: </label>
+            <textarea name="message" id="message" required></textarea>
+        </p>
+        <button type="submit">Submit</button>
+    </form>
+    <p><a href="/">Back to messages</a></p>
+</main>
+<%- include("../partials/footer.ejs") %>

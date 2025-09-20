@@ -1,0 +1,9 @@
+<%- include("../partials/header.ejs") %>
+<h1>Message</h1>
+<main>
+    <p>from: <%= message.user %></p>
+    <p>"<%= message.text %>"</p>
+    <p>At <%= message.added %></p>
+    <a href="/">Go back to messages</a>
+</main>
+<%- include("../partials/footer.ejs") %>
