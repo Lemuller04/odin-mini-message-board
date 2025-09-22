@@ -4,6 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/form.css">
+    <link rel="stylesheet" href="/styles/message.css">
 </head>
 <body>
+    <header class="header">
+        <div class="header-topbar">
+            <div class="header-logo"><span>MMB Logo</span></div>
+
+            <button class="mobile-menu-button" aria-label="Toggle menu">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    width="30"
+                    height="30"
+                >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M6 18L18 6M6 6l12 12"
+                        class = "hidden x-svg-icon"
+                    />
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M4 6h16M4 12h16M4 18h16"
+                        class = "hamburger-svg-icon"
+                    />
+                </svg>
+            </button>
+
+            <!-- Desktop Navbar -->
+            <nav class="desktop-navbar">
+                <a href="/" class="<%= currentPath === "/" ? "active" : "" %>">Messages</a>
+                <a href="/new" class="<%= currentPath === "/new" ? "active" : "" %>">New Message</a>
+            </nav>
+        </div>
+
+        <div class="menu-backdrop"></div>
+
+        <!-- Mobile Navbar -->
+        <nav class="mobile-navbar">
+            <a href="/" class="<%= currentPath === "/" ? "active" : "" %>">Messages</a>
+            <a href="/new" class="<%= currentPath === "/new" ? "active" : "" %>">New Message</a>
+        </nav>
+    </header>

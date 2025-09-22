@@ -4,13 +4,13 @@ const messages = [
   {
     text: "Hi there!",
     user: "Amando",
-    added: format(new Date(), "PPPP - HH:mm"),
+    added: new Date(),
     id: crypto.randomUUID(),
   },
   {
     text: "Hello world!",
     user: "Charles",
-    added: format(new Date(), "PPPP - HH:mm"),
+    added: new Date(),
     id: crypto.randomUUID(),
   },
 ];

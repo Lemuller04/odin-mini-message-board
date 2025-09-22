@@ -1,0 +1,54 @@
+.index-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .3rem 1rem;
+  background-color: transparent;
+}
+
+.index-main h1 {
+  font-size: 2rem;
+  padding-bottom: .3rem;
+}
+
+.index-main .messages-container {
+  max-width: 800px;
+  width: 100%;
+  border: 2px solid var(--default-color);
+  padding: .5rem;
+  border-radius: 14px;
+  display: grid;
+  gap: 1rem;
+}
+
+.message {
+  border: 1px solid var(--default-color);
+  border-radius: 8px;
+}
+
+.message-author {
+  display: flex;
+  justify-content: space-between;
+  padding: .3rem;
+  border-bottom: 1px solid var(--default-color);
+  background-color: var(--light-highlight);
+  color: var(--light-color);
+  border-radius: 8px 8px 0 0;
+}
+
+.message {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.message p {
+  padding: .3rem;
+}
+
+.message p::first-line {
+  text-indent: 30px;
+}
+
+.message-author a {
+  font-weight: 600;
+}

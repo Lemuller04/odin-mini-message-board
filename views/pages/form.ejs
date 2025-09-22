@@ -1,17 +1,35 @@
 <%- include("../partials/header.ejs") %>
-<h1>New message</h1>
-<main>
-    <form method="POST" action="/new">
+<main class="form-main">
+<h1><%= title %></h1>
+    <form method="POST" action="/new" class="new-message-form">
+        <p class="form-error"></p>
         <p>
-            <label for="author">Username: </label>
-            <input type="text" name="author" id="author" required>
+            <label for="author">
+                Username: <span class="input-length" id="username-length">0/16</span>
+            </label>
+            <input
+                type="text"
+                name="author"
+                id="author"
+                minlength="1"
+                maxlength="16"
+                autocomplete=true
+                required
+            >
         </p>
         <p>
-            <label for="message">Message: </label>
-            <textarea name="message" id="message" required></textarea>
+            <label for="message">
+                Message: <span class="input-length" id="message-length">0/255</span>
+            </label>
+            <textarea
+                name="message"
+                id="message"
+                minlength="1"
+                maxlength="255"
+                required
+            ></textarea>
         </p>
-        <button type="submit">Submit</button>
+        <button type="submit" class="submit-new-message">Submit</button>
     </form>
-    <p><a href="/">Back to messages</a></p>
 </main>
 <%- include("../partials/footer.ejs") %>
