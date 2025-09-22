@@ -19,7 +19,7 @@ async function getMessageById(id) {
     "SELECT id, username, message, added FROM message WHERE id = ($1)",
     [id],
   );
-  return result.rows;
+  return result.rows[0];
 }
 
 module.exports = {

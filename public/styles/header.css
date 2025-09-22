@@ -74,11 +74,11 @@
 }
 
 .mobile-menu-button:active {
-  outline: none;
+  outline: 2px solid var(--dark-highlight);
 }
 
 .mobile-menu-button:focus {
-  outline: none;
+  outline: 2px solid var(--dark-highlight);
 }
 
 .mobile-menu-button svg {

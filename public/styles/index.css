@@ -45,10 +45,6 @@
   padding: .3rem;
 }
 
-.message p::first-line {
-  text-indent: 30px;
-}
-
 .message-author a {
   font-weight: 600;
 }

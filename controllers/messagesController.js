@@ -1,5 +1,4 @@
 const { body, validationResult } = require("express-validator");
-const rawMessages = require("../data/messages.js");
 const db = require("../db/queries.js");
 
 async function messagesListGet(req, res) {
@@ -39,8 +38,8 @@ async function messagesNewPost(req, res) {
   if (!errors.isEmpty()) {
     return res.render("pages/form", {
       title: "Add a New Message",
-      errors: errors,
-      data: req.body,
+      errors: errors.array(),
+      data: { author: req.body.author, message: req.body.message },
     });
   }
 
@@ -49,17 +48,26 @@ async function messagesNewPost(req, res) {
   res.redirect("/");
 }
 
-async function messageGetById(req, res) {
-  const message = await db.getMessageById(req.params.id);
+async function messagesGetById(req, res) {
+  let message;
+  try {
+    message = await db.getMessageById(req.params.id);
+  } catch (e) {
+    return res.status(404).render("pages/404", { title: "Message not Found" });
+  }
 
-  message[0].dateFormatted = message[0].added.toLocaleString("en-GB", {
+  if (!message) {
+    return res.status(404).render("pages/404", { title: "Message not Found" });
+  }
+
+  message.dateFormatted = message.added.toLocaleString("en-GB", {
     dateStyle: "medium",
     timeStyle: "short",
   });
 
   res.render("pages/message", {
     title: "Message Details",
-    msg: message[0],
+    msg: message,
   });
 }
 
@@ -67,5 +75,6 @@ module.exports = {
   messagesListGet,
   messagesNewGet,
   messagesNewPost,
-  messageGetById,
+  messagesGetById,
+  validateMessage,
 };

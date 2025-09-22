@@ -10,13 +10,19 @@
         <div class="message">
             <div class="message-author">
                 <h3><%= message.username %></h3>
-                <span><%= message.dateFormatted %> <a href="/message/<%= message.id %>">Open</a></span>
+                <span><%= message.dateFormatted %> <a href="/messages/<%= message.id %>">Open</a></span>
             </div>
             <p>
                 <%= message.message %>
             </p>
         </div>
     <% } %>
+<% } else { %>
+    <p>
+        Looks like there are no message yet.
+        <br>
+        How about you add the first one? Click here: <a href="/new">write message</a>
+    </p>
 <% } %>
 </section>
 

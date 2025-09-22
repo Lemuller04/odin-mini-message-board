@@ -2,7 +2,11 @@
 <main class="form-main">
 <h1><%= title %></h1>
     <form method="POST" action="/new" class="new-message-form">
-        <p class="form-error"></p>
+        <% if (locals.errors) { %>
+            <% for (const error of errors) { %>
+                <p class="form-error"><%= error.msg %></p>
+            <% } %>
+        <% } %>
         <p>
             <label for="author">
                 Username: <span class="input-length" id="username-length">0/16</span>
@@ -13,8 +17,9 @@
                 id="author"
                 minlength="1"
                 maxlength="16"
-                autocomplete=true
+                autocomplete="on"
                 required
+                value="<%= locals.data?.author ?? "" %>"
             >
         </p>
         <p>
@@ -27,7 +32,7 @@
                 minlength="1"
                 maxlength="255"
                 required
-            ></textarea>
+            ><%= locals.data?.message ?? "" %></textarea>
         </p>
         <button type="submit" class="submit-new-message">Submit</button>
     </form>

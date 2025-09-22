@@ -16,11 +16,6 @@
   padding-left: .5rem;
 }
 
-.message-main p:hover {
-  background-color: #d7ccd9;
-  cursor: pointer;
-}
-
 .message-main h1 {
   font-size: 2rem;
   padding-bottom: .3rem;
