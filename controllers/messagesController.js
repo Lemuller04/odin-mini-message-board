@@ -7,7 +7,6 @@ async function messagesListGet(req, res) {
     ...msg,
     dateFormatted: msg.added.toLocaleString("en-GB", {
       dateStyle: "medium",
-      timeStyle: "short",
     }),
   }));
 
@@ -62,7 +61,6 @@ async function messagesGetById(req, res) {
 
   message.dateFormatted = message.added.toLocaleString("en-GB", {
     dateStyle: "medium",
-    timeStyle: "short",
   });
 
   res.render("pages/message", {
