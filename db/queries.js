@@ -8,10 +8,10 @@ async function getAllMessages() {
 }
 
 async function createMessage(author, message) {
-  await pool.query("INSERT INTO message (username, message) VALUES ($1, $2)", [
-    author,
-    message,
-  ]);
+  await pool.query(
+    "INSERT INTO message (username, message, added) VALUES ($1, $2, $3)",
+    [author, message, new Date()],
+  );
 }
 
 async function getMessageById(id) {
