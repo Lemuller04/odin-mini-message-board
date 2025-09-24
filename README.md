@@ -104,7 +104,7 @@ DB_NAME=minimessageboard
 
 ## Database Schema and Seed
 
-Create a messages table (or message if you prefer singular). Recommended schema with default timestamp:
+Create a message table. Recommended schema with default timestamp:
 
 ```sql
 CREATE TABLE IF NOT EXISTS message (
